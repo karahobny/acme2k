@@ -13,5 +13,7 @@ would stand for Monaco size 9 antialised.
 colors need to be in the format of `0x*rgb hex color code*FF` without the prefixed hashtag. i'd suggest just to experiment what all the #defines mean but to start you with something `c_tagbg` means tag window background color. `c_txtbg` means text window backgorund color. `...hlbg/fg` means highlighted text background and foreground color etc.
 
 ## example looks
+
 ![configuration nro1](https://raw.githubusercontent.com/karahobny/acmecolors/master/acme1.png)
+
 ![configuration nro2](https://raw.githubusercontent.com/karahobny/acmecolors/master/acme3.png)
