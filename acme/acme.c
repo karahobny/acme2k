@@ -1011,8 +1011,8 @@ iconinit(void)
 	r = button->r;
 	colbutton = allocimage(display, r, RGBA32, 1, c_winbutton);
 
-	but2col = allocimage(display, r, screen->chan, 1, 0xAA0000FF);
-	but3col = allocimage(display, r, screen->chan, 1, 0x006600FF);
+	but2col = allocimage(display, r, screen->chan, 1, c_button2hl);
+	but3col = allocimage(display, r, screen->chan, 1, c_button3hl);
 }
 
 /*
