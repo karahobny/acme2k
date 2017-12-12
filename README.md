@@ -14,4 +14,4 @@ colors need to be in the format of `0x*rgb hex color code*FF` without the prefix
 
 ## example looks
 ![configuration nro1](https://raw.githubusercontent.com/karahobny/acmecolors/master/acme1.png)
-![configuration nro2](https://raw.githubusercontent.com/karahobny/acmecolors/master/acme2.png)
+![configuration nro2](https://raw.githubusercontent.com/karahobny/acmecolors/master/acme3.png)
