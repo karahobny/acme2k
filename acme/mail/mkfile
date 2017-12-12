@@ -1,0 +1,15 @@
+<$PLAN9/src/mkhdr
+
+TARG=Mail
+OFILES=\
+		html.$O\
+		mail.$O\
+		mesg.$O\
+		reply.$O\
+		util.$O\
+		win.$O
+
+HFILES=dat.h
+
+<$PLAN9/src/mkone
+
