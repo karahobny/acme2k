@@ -1,4 +1,4 @@
-# acme
+# [acme](http://acme.cat-v.org/)
 just copy `acme`-folder to your `$PLAN9/src/cmd` replacing the existing `acme`-folder. ie.:
    `cp acme /usr/lib64/plan9/src/cmd/ -R`
 you may need to build from the `INSTALL`-file located in the `$PLAN9`-root, but usually its enough to build from
