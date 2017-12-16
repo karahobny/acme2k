@@ -692,13 +692,9 @@ texttype(Text *t, Rune r)
 			textshow(t, t->q1+1, t->q1+1, TRUE);
 		return;
 	case Kdown:
-		if(t->what == Tag)
+		if(t->what == Tag && !t->w->tagexpand)
  			goto Tagdown;
-/* 		n = t->fr.maxlines/3; 		
-		goto case_Down; 		
-*/
 		typecommit(t);
-/* 1rst check for being in the last line*/	
 		q0 = t->q0;
 		q1 = q0;
 		if (q1) q1--;
@@ -710,13 +706,11 @@ texttype(Text *t, Rune r)
 			return;
 		}
 		q0++;
-/* find old pos in ln */
-		while(q1>1 && textreadc(t, q1)!='\n'){
+		while(q1>1 && textreadc(t, q1)!='\n') {
 			nnb++;
 			q1--;
 		}
-/* go right until reachg pos or \n */
-		while(q0<t->file->b.nc && (nnb>0 && textreadc(t, q0)!='\n')){
+		while(q0<t->file->b.nc && (nnb>0 && textreadc(t, q0)!='\n')) {
 			q0++;
 			nnb--;
 		}
@@ -742,14 +736,10 @@ texttype(Text *t, Rune r)
 		typecommit(t);
 		nnb = 0;
 		if(t->q0>0 && textreadc(t, t->q0-1)!='\n')
-			nnb = textbswidth(t, 0x15); 
-		/* BOL - 1 if not first line of txt BOL*/
-		if( t->q0-nnb > 1  && textreadc(t, t->q0-nnb-1)=='\n' ) nnb++; 
-        	// if( t->q1-nnb > 1) 
+			nnb = textbswidth(t, 0x15);
+		if( t->q0-nnb > 1  && textreadc(t, t->q0-nnb-1)=='\n' ) nnb++;
 		textshow(t, t->q0-nnb, t->q0-nnb, TRUE);
 		return;
-		/* n = t->fr.maxlines/3;
-		goto case_Up; */
 	case Kscrolloneup:
 		if(t->what == Tag)
 			goto Tagup;
@@ -879,6 +869,27 @@ texttype(Text *t, Rune r)
 		if(t->ncache > 0)
 			typecommit(t);
 		t->iq1 = t->q0;
+		return;
+	case 0x0B:	/* ^K erase backwards to end of line */
+		typecommit(t);
+		q0 = t->q0;
+		q1 = t->q0;
+		while(q1<t->file->b.nc && textreadc(t, q1)!='\n')
+			q1++;
+		nnb = q1 - q0;
+		if (nnb != 0) {
+			goto eraseCommon;
+		}
+	case 0x04:	/* ^D: erase backwards */
+		if(t->q1 < t->file->b.nc){
+			// Correct result but causes an uneeded repaint?
+			typecommit(t);
+			textshow(t, t->q1+1, t->q1+1, TRUE);
+			nnb = 1;
+			q1 = t->q0;
+			q0 = q1-nnb;
+			goto eraseCommon;
+		}
 		return;
 	case 0x08:	/* ^H: erase character */
 	case 0x15:	/* ^U: erase line */
