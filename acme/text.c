@@ -716,8 +716,10 @@ texttype(Text *t, Rune r)
 		textsetorigin(t, q0, TRUE);
 		return;
 
-/* Keybindings for scrolling up and down
-     the text via up and down arrow keys */
+/* 
+ *  Keybindings for scrolling up and down
+ *  the text via up and down arrow keys
+ */
 	
 	case Kdown:
 		if(t->what == Tag)
@@ -760,10 +762,10 @@ texttype(Text *t, Rune r)
 		textshow(t, t->q0-nnb, t->q0-nnb, TRUE);
 		return;
 
-
-
-/* Home and End now respectively take you to the
-   beginning and to the end of the line respectively. */
+/*
+ *  Home and End now respectively take you to the
+ *  beginning and to the end of the line respectively.
+ */
 
 	case Khome:
 		typecommit(t);
@@ -796,17 +798,21 @@ texttype(Text *t, Rune r)
 		undo(t, nil, nil, FALSE, 0, nil, 0);
 		return;	
 
-/* Adding Windows and X11 -compatible Ctrl+c/Ctrl+z etc. */
+/*
+ *  Adding Windows and X11 -compatible Ctrl+C, Ctrl+Z and
+ *  Ctrl+R (for redoing). TODO: find out how to check out for
+ *  shift press, for Ctrl+Shift+Z in this godforsaken switch()
+ */
 
-	case 0x03:	/* 0x03 Ctrl+C: copy */
+	case 0x03:	/* Ctrl+C: copy */
 		typecommit(t);
 		cut(t, t, nil, TRUE, FALSE, nil, 0);
 		return;
-	case 0x1A:	/* 0x1A Ctrl+Z: undo */
+	case 0x1A:	/* Ctrl+Z: undo */
 	 	typecommit(t);
 		undo(t, nil, nil, TRUE, 0, nil, 0);
 		return;
-	case 0x12:	/* Ctrl+R: redo TODO: find out how to check for shift press */
+	case 0x12:	/* Ctrl+R: redo */
 	 	typecommit(t);
 		undo(t, nil, nil, FALSE, 0, nil, 0);
 		return;
@@ -911,7 +917,13 @@ texttype(Text *t, Rune r)
 			typecommit(t);
 		t->iq1 = t->q0;
 		return;
-	case 0x08:	/* ^H : erase character !!! */
+
+/*
+ *  quick hack for DELETE-key, just added it to see what happens and
+ *  apparently it works like ^U and erases whole lines. i should learn c
+ */
+	case 0x7F:		
+	case 0x08:	/* ^H: erase character */
 	case 0x15:	/* ^U: erase line */
 	case 0x17:	/* ^W: erase  word */
 		if(t->q0 == 0)	/* nothing to erase */
