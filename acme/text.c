@@ -716,7 +716,8 @@ texttype(Text *t, Rune r)
 		textsetorigin(t, q0, TRUE);
 		return;
 
-/* Keybindings for scrolling up and down the text via up and down arrow keys */
+/* Keybindings for scrolling up and down
+     the text via up and down arrow keys */
 	
 	case Kdown:
 		if(t->what == Tag)
@@ -766,27 +767,18 @@ texttype(Text *t, Rune r)
 
 	case Khome:
 		typecommit(t);
-		if(t->iq1 > t->org+t->fr.nchars) {
-			if(t->iq1 > t->file->b.nc) {
-				// should not happen, but does. and it will crash textbacknl.
-				t->iq1 = t->file->b.nc;
-			}
-			q0 = textbacknl(t, t->iq1, 1);
-			textsetorigin(t, q0, TRUE);
-		} else
-			textshow(t, t->file->b.nc, t->file->b.nc, FALSE);
+		/* go to where ^U would erase, if not already at BOL */
+		nnb = 0;
+		if(t->q0>0 && textreadc(t, t->q0-1)!='\n')
+			nnb = textbswidth(t, 0x15);
+		textshow(t, t->q0-nnb, t->q0-nnb, TRUE);
 		return;
 	case Kend:
 		typecommit(t);
-		if(t->iq1 > t->org+t->fr.nchars) {
-			if(t->iq1 > t->file->b.nc) {
-				// should not happen, but does. and it will crash textbacknl.
-				t->iq1 = t->file->b.nc;
-			}
-			q0 = textbacknl(t, t->iq1, 1);
-			textsetorigin(t, q0, TRUE);
-		} else
-			textshow(t, t->file->b.nc, t->file->b.nc, FALSE);
+		q0 = t->q0;
+		while(q0<t->file->b.nc && textreadc(t, q0)!='\n')
+			q0++;
+		textshow(t, q0, q0, TRUE);
 		return;
 		
 /* I'll keep the MAC-keybindings 'cuz im such a nice guy */
@@ -806,11 +798,11 @@ texttype(Text *t, Rune r)
 
 /* Adding Windows and X11 -compatible Ctrl+c/Ctrl+z etc. */
 
-	case 0x03:	/* Ctrl+C: copy */
+	case 0x03:	/* 0x03 Ctrl+C: copy */
 		typecommit(t);
 		cut(t, t, nil, TRUE, FALSE, nil, 0);
 		return;
-	case 0x1A:	/* Ctrl+Z: undo */
+	case 0x1A:	/* 0x1A Ctrl+Z: undo */
 	 	typecommit(t);
 		undo(t, nil, nil, TRUE, 0, nil, 0);
 		return;
@@ -822,11 +814,10 @@ texttype(Text *t, Rune r)
 	Tagdown:
 		/* expand tag to show all text */
 		if(!t->w->tagexpand){
-			t->w->tagexpand = TRUE;
-			winresize(t->w, t->w->r, FALSE, TRUE);
+		t->w->tagexpand = TRUE;
+		winresize(t->w, t->w->r, FALSE, TRUE);
 		}
 		return;
-	
 	Tagup:
 		/* shrink tag to single line */
 		if(t->w->tagexpand){
@@ -844,7 +835,7 @@ texttype(Text *t, Rune r)
 		filemark(t->file);
 	}
 	
-	/* cut/paste must be done after the seq++/filemark */
+	/* cut/paste must be done after the seq++/filemark */
 	
 	switch(r){
 	case Kcmd+'x':	/* %X: cut */
@@ -920,9 +911,9 @@ texttype(Text *t, Rune r)
 			typecommit(t);
 		t->iq1 = t->q0;
 		return;
-	case 0x08:	/* ^H: erase character */
+	case 0x08:	/* ^H : erase character !!! */
 	case 0x15:	/* ^U: erase line */
-	case 0x7F:	/* Delete: erase word */
+	case 0x17:	/* ^W: erase  word */
 		if(t->q0 == 0)	/* nothing to erase */
 			return;
 		nnb = textbswidth(t, r);
