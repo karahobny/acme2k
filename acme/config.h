@@ -1,5 +1,5 @@
 char *fontnames[2] = {
-	"/mnt/font/ProFont for Powerline/9/font",
+	"/mnt/font/GohuFont/9/font",
 	"/mnt/font/Go Mono for Powerline/8a/font"
 };
 
