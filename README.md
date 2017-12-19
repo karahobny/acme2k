@@ -1,5 +1,5 @@
-# [acme](http://acme.cat-v.org/)
-
+[acme](http://acme.cat-v.org/)
+==============================
 
 **_Q:_** so what's an acme?
 
@@ -17,6 +17,8 @@
 
 **_A:_** you bet your ass it is, but unlike `emacs` in this allegory of sorts, it's not heavy. it is, though,
 
+![logo](https://raw.githubusercontent.com/karahobny/acmecolors/master/acme2.png)
+
 ### ACME INTERNATIONAL COMPILED EDITORS
 
 #### THEY EDIT LIKE HELL.
@@ -25,21 +27,7 @@
 
 surpasses our Acme in shape, material or finish.
 ```
-solid forged of unsigned int pieces of best wrought C, linked at the binary; tag line is made of one
-
-piece of code, compiled with -funroll-loops to the the rest of the window column and warranted 
-
-with a [permissive license](https://raw.githubusercontent.com/9fans/plan9port/master/LICENSE). text window has sufficient refactoring done to insure stability and 
-
-prevent SEGFAULTing; has ug, but perfectly written shell: [rc](http://doc.cat-v.org/plan_9/4th_edition/papers/rc); acme is linted and debugged by a 
-
-special compiler so that there are no functions that return structures or integer and floating 
-
-numbers in object code not converted to known formats and byte orders; [config.h](https://github.com/karahobny/acmecolors/blob/master/acme/config.h) should be perfectly 
-
-tempered by the user or it will fuck up. mkfiles are straight and true, so you will have no trouble 
-
-on account of acme returning zero or not compiling.
+solid forged of unsigned int pieces of best wrought C, linked at the binary; tag line is made of one piece of code, compiled with -funroll-loops to the the rest of the window column and warranted with a [permissive license](https://raw.githubusercontent.com/9fans/plan9port/master/LICENSE). text window has sufficient refactoring done to insure stability and prevent SEGFAULTing; has ug, but perfectly written shell: [rc](http://doc.cat-v.org/plan_9/4th_edition/papers/rc); acme is linted and debugged by a special compiler so that there are no functions that return structures or integer and floating numbers in object code not converted to known formats and byte orders; [config.h](https://github.com/karahobny/acmecolors/blob/master/acme/config.h) should be perfectly tempered by the user or it will fuck up. mkfiles are straight and true, so you will have no trouble on account of acme returning cryptic compiler errors and not compiling.
 
 # brass tacks (the serious business)
 
@@ -63,9 +51,13 @@ you may need to build from the `INSTALL`-file located in the `$PLAN9`-root, but 
 
 
 ## config.h
-`config.h` includes all the neccesary color and font modifications you just need to `mk install` it after every time you modify it, suckless style. `fontsrv -p .` to list all the available fonts and then use them like `"/mnt/font/*listed font*/*font size**a or no a depending if you want antialiasing or not*/font"` ie.
-    `"/mnt/font/Monaco/9a/font"`
-would stand for Monaco size 9 antialised.
+`config.h` includes all the neccesary color and font modifications you just need to `mk install` it after every time you modify it, suckless style. `fontsrv -p .` to list all the available fonts and then use them like 
+```bash
+"/mnt/font/[listed font]/[font size][a(ntialias)/no a(antialias)]/font",
+"/mnt/font/Monaco/9a/font",
+"/mnt/font/GohuFont/9/font",
+```
+in this case the first option would stand for Monaco size 9 antialised, the second for GohuFont size 9 aliased, ofc.
 
 ## colors
 colors need to be in the format of `0x*rgb hex color code*FF` without the prefixed hashtag. i'd suggest just to experiment what all the #defines mean but to start you with something `c_tagbg` means tag window background color. `c_txtbg` means text window backgorund color. `...hlbg/fg` means highlighted text background and foreground color etc.
