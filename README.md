@@ -14,7 +14,7 @@ ready thyself for thine bodieth utmost horrrifiength challengeth and read more a
 
 # brass tacks (the serious business)
 
-**acme2k** depends on `plan9port` which can be found [here on github](https://github.com/9fans/plan9port) or on your local repository. i know debian has stripped plan9 userpace called `9base` but i wouldn't roll my dice with this working wth it. don't know haven't a clue, now's yer chance to feel useful.
+**acme2k** depends on `plan9port` which can be found [here on github](https://github.com/9fans/plan9port) or on your local repository. i know debian has stripped plan9 userpace called `9base` but i wouldn't roll my dice with this working wth it. don't know haven't a clue, now's yer chance to feel useful and test it out.
 
 
 after following the instructions in your `$PLAN9`-folder to run `./INSTALL` and `mk`'ing every goddamn plan9 userspace application there happens to be ported, you can move right on to mangle it with this godawfulness:
