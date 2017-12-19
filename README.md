@@ -11,13 +11,13 @@
 
 **_Q:_** what he is saying that acme is in fact an anvil just like from roadrunner and et cetera.
 
-**_Q:_** oh let me get this one.
-
-**_Q:_** so am i supposed to edit text with an anvil?
-
 **_A:_** you bet your ass it is, but unlike `emacs` in this allegory of sorts, it's not heavy. it is, though,
 
+
+
 ![logo](https://raw.githubusercontent.com/karahobny/acmecolors/master/acme2.png)
+
+
 
 ### ACME INTERNATIONAL COMPILED EDITORS
 
