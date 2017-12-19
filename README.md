@@ -12,11 +12,25 @@ solid forged of unsigned int pieces of best wrought C, linked at the binary; tag
 
 ready thyself for thine bodieth utmost horrrifiength challengeth and read more about [acme](http://acme.cat-v.org/)
 
-# brass tacks (the serious business)
+## acme2k features
 
++ autoindent, swapscrollbars, fonts and colors configurable from config.h.
+
++ arrow keys navigate through text up one letter and down one letter instead of scrolling.
+
++ `ctrl+c`, `ctrl+x`, `ctrl+v` for snarfing, cutting and pasting selected text; `ctrl+z` for undo and `ctrl+r` for redo.
+
++ `home` and `end` move the cursor to the start or to the end of the current line respectively.
+
++ `delete` deletes all text from the start of the line until cursor position. (a placeholder feature really)
+
++ the end ... ?
+
+# brass tacks (the serious business)
+## dependencies
 **acme2k** depends on `plan9port` which can be found [here on github](https://github.com/9fans/plan9port) or on your local repository. i know debian has stripped plan9 userpace called `9base` but i wouldn't roll my dice with this working wth it. don't know haven't a clue, now's yer chance to feel useful and test it out.
 
-
+## installation
 after following the instructions in your `$PLAN9`-folder to run `./INSTALL` and `mk`'ing every goddamn plan9 userspace application there happens to be ported, you can move right on to mangle it with this godawfulness:
 
 
@@ -32,9 +46,11 @@ you may need to build from the `INSTALL`-file located in the `$PLAN9`-root, but 
       cd $PLAN9/src/cmd/acme; mk install
 ```
 
+### config.h
+`config.h` includes all the neccesary color and font modifications you just need to `mk install` it after every time you modify it, suckless style. 
 
-## config.h
-`config.h` includes all the neccesary color and font modifications you just need to `mk install` it after every time you modify it, suckless style. `fontsrv -p .` to list all the available fonts and then use them like 
+#### fonts
+`fontsrv -p .` to list all the available fonts and then use them like 
 ```bash
 "/mnt/font/[listed font]/[font size][a(ntialias)/no a(antialias)]/font",
 "/mnt/font/Monaco/9a/font",
@@ -42,10 +58,12 @@ you may need to build from the `INSTALL`-file located in the `$PLAN9`-root, but 
 ```
 in this case the first option would stand for Monaco size 9 antialised, the second for GohuFont size 9 aliased, ofc.
 
-## colors
+insert two fonts into config.h. the first one is treated as a proportional width font and is used everywhere by default. the second one can be activated for a specific window by executing `Font` from its tag window.
+
+#### colors
 colors need to be in the format of `0x*rgb hex color code*FF` without the prefixed hashtag. i'd suggest just to experiment what all the #defines mean but to start you with something `c_tagbg` means tag window background color. `c_txtbg` means text window backgorund color. `...hlbg/fg` means highlighted text background and foreground color etc.
 
-## example looks
+##### example looks
 
 ![configuration nro1](https://raw.githubusercontent.com/karahobny/acmecolors/master/acme1.png)
 
