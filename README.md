@@ -37,7 +37,7 @@ after following the instructions in your `$PLAN9`-folder to run `./INSTALL` and 
 just copy `acme`-folder to your `$PLAN9/src/cmd` replacing the existing `acme`-folder. ie.:
 
 ```bash
-      cp -r acme /usr/lib64/plan9/src/cmd/
+      cp -r acme $PLAN9/src/cmd/
 ```
 
 you may need to build from the `INSTALL`-file located in the `$PLAN9`-root, but usually its enough to build from
