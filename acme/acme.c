@@ -77,9 +77,20 @@ threadmain(int argc, char *argv[])
 		else
 			globalautoindent = TRUE;
 		break;
-	case 'b':
+
+/*  bartmode/flag is now an option to be turned on config.h, just
+ *  because it is way too useful to leave it as an meaningless
+ *  flag, especially since considering how almost everyone seems
+ *  to even miss its existence.
+ *
+ *  to get to the point, it denies window focus following mouse.
+ *  how fickle those mice can truly be when decieveth by a soothing
+ *  treat, a teat or two.
+ */
+
+/*	case 'b':
 		bartflag = TRUE;
-		break;
+		break; */
 	case 'c':
 		p = ARGF();
 		if(p == nil)
@@ -1096,4 +1107,3 @@ timefmt(Fmt *f)
 	return fmtprint(f, "%04d/%02d/%02d %02d:%02d:%02d",
 		tm->year+1900, tm->mon+1, tm->mday, tm->hour, tm->min, tm->sec);
 }
-
