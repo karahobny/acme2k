@@ -73,7 +73,7 @@ colors need to be in the format of `0x*rgb hex color code*FF` without the prefix
 
 but WHAT can I do
 -----------------
-definetly check out [TODO](https://raw.githubusercontent.com/karahobny/acmecolors/reorder/TODO.md) and feel free to chime in what would you like to see as a feature, add an issue or clone the repo and edit TODO.md and push it to the upstream, if all you want to do is add feature ideas. for bug fixes and coding features its better to contact me at:
+definetly check out [TODO](https://github.com/karahobny/acmecolors/blob/reorder/TODO.md) and feel free to chime in what would you like to see as a feature, add an issue or clone the repo and edit [TODO.md](https://github.com/karahobny/acmecolors/blob/reorder/TODO.md) and push it to the upstream, if all you want to do is add feature ideas. for bug fixes and coding features its better to contact me at:
 ````
 karahobny at gmail dot com
 ````
