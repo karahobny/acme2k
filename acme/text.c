@@ -717,8 +717,8 @@ texttype(Text *t, Rune r)
 		return;
 
 /* 
- *  Keybindings for scrolling up and down
- *  the text via up and down arrow keys
+ *  Keybindings for moving the cursor up and 
+ *  down the text via up and down arrow keys.
  */
 	
 	case Kdown:
@@ -765,8 +765,10 @@ texttype(Text *t, Rune r)
 /*
  *  Home and End now respectively take you to the
  *  beginning and to the end of the line respectively.
+ *  Also keep the original ^A and ^E keybindings.
  */
 
+	case 0x01:
 	case Khome:
 		typecommit(t);
 		/* go to where ^U would erase, if not already at BOL */
@@ -775,6 +777,7 @@ texttype(Text *t, Rune r)
 			nnb = textbswidth(t, 0x15);
 		textshow(t, t->q0-nnb, t->q0-nnb, TRUE);
 		return;
+	case 0x05:
 	case Kend:
 		typecommit(t);
 		q0 = t->q0;
@@ -800,7 +803,7 @@ texttype(Text *t, Rune r)
 
 /*
  *  Adding Windows and X11 -compatible Ctrl+C, Ctrl+Z and
- *  Ctrl+R (for redoing). TODO: find out how to check out for
+ *  Ctrl+Y (for redoing). TODO: find out how to check out for
  *  shift press, for Ctrl+Shift+Z in this godforsaken switch()
  */
 
@@ -812,7 +815,7 @@ texttype(Text *t, Rune r)
 	 	typecommit(t);
 		undo(t, nil, nil, TRUE, 0, nil, 0);
 		return;
-	case 0x12:	/* Ctrl+R: redo */
+	case 0x19:	/* Ctrl+Y: redo */
 	 	typecommit(t);
 		undo(t, nil, nil, FALSE, 0, nil, 0);
 		return;
@@ -922,9 +925,11 @@ texttype(Text *t, Rune r)
  *  quick hack for DELETE-key, just added it to see what happens and
  *  apparently it works like ^U and erases whole lines. i should learn c
  */
-	case 0x7F:		
+ 
+		
 	case 0x08:	/* ^H: erase character */
 	case 0x15:	/* ^U: erase line */
+	case 0x7F:
 	case 0x17:	/* ^W: erase  word */
 		if(t->q0 == 0)	/* nothing to erase */
 			return;
