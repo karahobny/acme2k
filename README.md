@@ -69,15 +69,21 @@ in this case the first option would stand for Monaco size 9 antialised, the seco
 insert two fonts into config.h. the first one is treated as a proportional width font and is used everywhere by default. the second one can be activated for a specific window by executing `Font` from its tag window.
 
 #### colors
-colors need to be in the format of `0x*rgb hex color code*FF` without the prefixed hashtag. i'd suggest just to experiment what all the #defines mean but to start you with something `c_tagbg` means tag window background color. `c_txtbg` means text window backgorund color. `...hlbg/fg` means highlighted text background and foreground color etc.
+colors need to be in the format of `0x*rgb hex color code*FF` without the prefixed hashtag. i'd suggest just to experiment what all the #defines mean but to start you with something `c_tagbg` means tag window background color. `c_txtbg` means text window backgorund color. `...hlbg/fg` means highlighted text background and foreground color etc. i've taken the liberty to comment all the color variations and what they affect on [config.h's noticeable comment section](https://github.com/karahobny/acme2k/blob/reorder/acme/config.h). go ahead and take a peek.
 
-but WHAT can I do
------------------
+## but WHAT can I do
 definetly check out [TODO](https://github.com/karahobny/acmecolors/blob/reorder/TODO.md) and feel free to chime in what would you like to see as a feature, add an issue or clone the repo and edit [TODO.md](https://github.com/karahobny/acmecolors/blob/reorder/TODO.md) and push it to the upstream, if all you want to do is add feature ideas. for bug fixes and coding features its better to contact me at:
 ````
 karahobny at gmail dot com
 ````
 or branch and send a pull request so i can check it out, dont worry ill always tip and youll get your name on the contributors list and you can for all i care, add your name on a comment preceding the codeblock in question, you know p. much what ever that doesnt harm the readability of the code, im all about you people having the respect you deserve for having partaken in such a sweet project.
+
+## license (or whats the other one ive never heard of)
+yeah no one's really heard of that other one, it was just a fucked up situation where plan9 guys' hands were forced by lawyers to use that for some reason. plan 9 also got gpl'd for some time but that version is meaningless and a joke afaik; up still here in github if it somehow jollies your gollies tho.
+
+project is licensed (if ive understood correctly and this is possible), the original unmodified `plan9port/acme` being [**lucent public license**](https://github.com/karahobny/acme2k/blob/reorder/LICENSE.LUCENT) which specifically disallows any warranty, like every goddamn license in the whole goddamn universe and allows for me to sublicense it as i see fit so ive licensed specifically my modifications under [**mit license**](https://github.com/karahobny/acme2k/blob/reorder/LICENSE.MIT), simply because it's more straightforward a permissive license and nobody really has to second guess what its trying to allow/disallow me to do.
+
+ive yet to have had to think about accepting contributions from other licenses than **lucent** or **mit** since this is still in its faltering baby steps, but id still hope if you would think about trying to avoid having a deck of licenses to show instead of like actual features in our repository. just think about it: **mit** stands for umm mankind institute of technology so you know thats smart, why would a license called something that smart be dumb, hm? riddle me that, atheists.
 
 
 
