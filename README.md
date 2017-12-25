@@ -15,7 +15,7 @@ ready thyself for thine bodieth utmost horrrifiength challengeth and read more a
 ## acme2k features
 
 ![a1](https://raw.githubusercontent.com/karahobny/acmecolors/reorder/img/a1.png)
->*who needs syntax highlighting when this fine piece of work purrs and shows that these fangs got all kinds of shades of visceral strewn around, yet in finite enough of quantities to forbid you from not appreciating its scarcity, elevating it from a mere editor to a sublime Rothko, while emacs sinks in it's kitschy aesthetics, no matter how hard the themes try to salvage that bloated-out-of-proportions Titanic...
+>*who needs syntax highlighting when this fine piece of work purrs and shows that these fangs got all kinds of shades of visceral strewn around, yet in finite enough of quantities to forbid you from not appreciating its scarcity, elevating it from a mere editor to a sublime Rothko, while emacs sinks in it's kitschy aesthetics, no matter how hard the themes try to salvage that bloated-out-of-proportions Titanic...*
 
 + autoindent, swapscrollbars, fonts and colors configurable from config.h.
 
@@ -62,7 +62,7 @@ you may need to build from the `INSTALL`-file located in the `$PLAN9`-root, but 
 "/mnt/font/GohuFont/9/font",
 ```
 ![a3](https://raw.githubusercontent.com/karahobny/acmecolors/reorder/img/a3.png)
->*dont be shackled by dark hues and saturated pinks, make Glenda, the Bunny, proud by showing off the team colors aka the Rio Windowing Systems. "little black-on-white makes a little rob pike smile. when? every now and then!", or so ive been told.
+>*dont be shackled by dark hues and saturated pinks, make Glenda, the Bunny, proud by showing off the team colors aka the Rio Windowing Systems. "little black-on-white makes a little rob pike smile. when? every now and then!", or so ive been told.*
 
 in this case the first option would stand for Monaco size 9 antialised, the second for GohuFont size 9 aliased, ofc.
 
@@ -78,10 +78,6 @@ definetly check out [TODO](https://github.com/karahobny/acmecolors/blob/reorder/
 karahobny at gmail dot com
 ````
 or branch and send a pull request so i can check it out, dont worry ill always tip and youll get your name on the contributors list and you can for all i care, add your name on a comment preceding the codeblock in question, you know p. much what ever that doesnt harm the readability of the code, im all about you people having the respect you deserve for having partaken in such a sweet project.
-
-# PEACE
-
-
 
 
 
