@@ -4,7 +4,9 @@
  *  everywhere possible and as a main UI font, while
  *  the second font it treats as a fixed-width font,
  *  changeable to any text window by executing `Font`
- *  from tag window. Note: `Font` can also be executed
+ *  from tag window.
+ *
+ *  Note: `Font` can also be executed
  *  with arguments with any `fontsrv -p .` approved
  *  fonts, thus allowing you to experiment with font
  *  sizes and whether you want anti-aliasing or not.
@@ -12,7 +14,7 @@
 
 char *fontnames[2] = {
 	"/mnt/font/GohuFont/8/font",
-	"/mnt/font/ProFont for Powerline/9/font"
+	"/mnt/font/ProFont/9/font"
 };
 
 /*
@@ -31,49 +33,49 @@ int globalautoindent	= TRUE;
 
 int	swapscrollbuttons	= FALSE;
 
-/*  
+/*
  *  bartflag triggers quote unquote experimental
  *  mode, in which instead of mouse following focus
  *  from window to window etc. it in fact, does not.
  *
  *  comes highly suggested.
  */
- 
+
 int bartflag			= TRUE;
 
 /*
  *  colors-constants. now let me take a minute to explain
- *  them. tagbg/fg/hlbg/hlfg are respectively your tag
- *  tag windows background, foreground, highlighted back-
- *  and foreground color. The same really applies to c_txt*-
- *  variants of the same constant just in this case its about
- *  the text window
- *  
- *  `c_winbutton` is the button which you can adjust your
- *   columns with. `c_colbutton` represents a separate text 
- *  windows button. `c_tmpbutton` is the so-called "dirty"
- *  or "unclean" -marker aka just a modified file put in the
- *  middle of `c_colbutton`. ``c_scrollbg` is plain and simple
- *  your scrollbar background color.
+ *  them. C_TAGBG/FG/HLBG/HLFG are respectively your tag
+ *  windows background, foreground, highlighted back- and
+ *  foreground color. The same exact applies to C_TXT*-
+ *  variants of the same constant just in this case it handles
+ *  the colorscheme of the text window.
  *
- *  the last defines are for defining the color of the specific
+ *  C_WINBUTTON is the button which you adjust your columns
+ *  position with. C_COLBUTTON represents a separate text
+ *  windows button. C_TMPBUTTON is the so-called "dirty"
+ *  or "unclean" -marker aka notifying the file as modified put
+ *  in the middle of C_COLBUTTON. C_SCROLLBG is plain and simple
+ *  your scrollbars background color.
+ *
+ *  the last two defines are for defining the color of the specific
  *  buttons highlight background.
  */
 
-#define c_tagbg			0xFFFFFFFF
-#define c_tagfg			0x000000FF
-#define c_taghlbg		0x999999FF
-#define c_taghlfg		0x000000FF
+#define C_TAGBG			0xFFFFFFFF
+#define C_TAGFG			0x000000FF
+#define C_TAGHLBG		0x999999FF
+#define C_TAGHLFG		0x000000FF
 
-#define c_txtbg			0xFFFFFFFF
-#define c_txtfg			0x000000FF
-#define c_txthlbg		0x999999FF
-#define c_txthlfg		0x000000FF
+#define C_TXTBG			0xFFFFFFFF
+#define C_TXTFG			0x000000FF
+#define C_TXTHLBG		0x999999FF
+#define C_TXTHLFG		0x000000FF
 
-#define c_winbutton		0x4d4d4dFF
-#define c_colbutton		0x55aaaaFF
-#define c_tmpbutton		0x55aaaaFF
-#define c_scrollbg		0x999999FF
+#define C_WINBUTTON		0x4d4d4dFF
+#define C_COLBUTTON		0x55aaaaFF
+#define C_TMPBUTTON		0x55aaaaFF
+#define C_SCROLLBG		0x999999FF
 
-#define c_button2hl		0x55aaaaFF
-#define c_button3hl		0x55aaaaFF
+#define C_BUTTON2HL		0x55aaaaFF
+#define C_BUTTON3HL		0x55aaaaFF

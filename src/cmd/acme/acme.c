@@ -91,6 +91,7 @@ threadmain(int argc, char *argv[])
 /*	case 'b':
 		bartflag = TRUE;
 		break; */
+
 	case 'c':
 		p = ARGF();
 		if(p == nil)
@@ -960,8 +961,7 @@ rfclose(Reffont *r)
 }
 
 Cursor boxcursor = {
-/* {-7, -7}, */	
-	{0, 0},
+	{-7, -7},
 	{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 	 0xFF, 0xFF, 0xF8, 0x1F, 0xF8, 0x1F, 0xF8, 0x1F,
 	 0xF8, 0x1F, 0xF8, 0x1F, 0xF8, 0x1F, 0xFF, 0xFF,
@@ -979,21 +979,21 @@ iconinit(void)
 	Image *tmp;
 
 	if(tagcols[BACK] == nil) {
-	
-		tagcols[BACK]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_tagbg);
-		tagcols[HIGH]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_taghlbg);
-		tagcols[BORD]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_colbutton);
-		tagcols[TEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_tagfg);
-		tagcols[HTEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_taghlfg);
 
-		textcols[BACK] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_txtbg);
-		textcols[HIGH] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_txthlbg);
-		textcols[BORD] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_scrollbg);
-		textcols[TEXT] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_txtfg);
-		textcols[HTEXT] = allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_txthlfg);	
-	
+		tagcols[BACK]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGBG);
+		tagcols[HIGH]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGHLBG);
+		tagcols[BORD]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_COLBUTTON);
+		tagcols[TEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGFG);
+		tagcols[HTEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGHLFG);
+
+		textcols[BACK] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTBG);
+		textcols[HIGH] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTHLBG);
+		textcols[BORD] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_SCROLLBG);
+		textcols[TEXT] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTFG);
+		textcols[HTEXT] = allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTHLFG);
+
 	}
-	
+
 	r = Rect(0, 0, Scrollwid+ButtonBorder, font->height+1);
 	if(button && eqrect(r, button->r))
 		return;
@@ -1015,15 +1015,15 @@ iconinit(void)
 	r.max.x -= ButtonBorder;
 	border(modbutton, r, ButtonBorder, tagcols[BORD], ZP);
 	r = insetrect(r, ButtonBorder);
-	tmp = allocimage(display, Rect(0,0,1,1), RGBA32, 1, c_tmpbutton);
+	tmp = allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TMPBUTTON);
 	draw(modbutton, r, tmp, nil, ZP);
 	freeimage(tmp);
 
 	r = button->r;
-	colbutton = allocimage(display, r, RGBA32, 1, c_winbutton);
+	colbutton = allocimage(display, r, RGBA32, 1, C_WINBUTTON);
 
-	but2col = allocimage(display, r, screen->chan, 1, c_button2hl);
-	but3col = allocimage(display, r, screen->chan, 1, c_button3hl);
+	but2col = allocimage(display, r, screen->chan, 1, C_BUTTON2HL);
+	but3col = allocimage(display, r, screen->chan, 1, C_BUTTON3HL);
 }
 
 /*
