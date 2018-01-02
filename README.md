@@ -1,5 +1,5 @@
 # acme2k
-![a](https://raw.githubusercontent.com/karahobny/acme2k/master/img/a.png)
+![a](img/a.png)
 ### ACME INTERNATIONAL COMPILED EDITORS
 
 #### THEY EDIT LIKE HELL.
@@ -8,13 +8,13 @@
 
 surpasses our Acme in shape, material or finish.
 ```
-solid forged of unsigned int pieces of best wrought C, linked at the binary; tag line is made of one piece of code, compiled with -funroll-loops to the the rest of the window column and warranted with a [permissive license](https://raw.githubusercontent.com/9fans/plan9port/master/LICENSE). text window has sufficient refactoring done to insure stability and prevent SEGFAULTing; has ug, but perfectly written shell: [rc](http://doc.cat-v.org/plan_9/4th_edition/papers/rc); acme is linted and debugged by a special compiler so that there are no functions that return structures or integer and floating numbers in object code not converted to known formats and byte orders; [config.h](https://github.com/karahobny/acme2k/blob/master/src/cmd/acme/config.h) should be perfectly tempered by the user or it will fuck up. mkfiles are straight and true, so you will have no trouble on account of acme returning cryptic compiler errors and not compiling.
+solid forged of unsigned int pieces of best wrought C, linked at the binary; tag line is made of one piece of code, compiled with -funroll-loops to the the rest of the window column and warranted with a [permissive license](src/cmd/acme/LICENSE). text window has sufficient refactoring done to insure stability and prevent SEGFAULTing; has ug, but perfectly written shell: [rc](http://doc.cat-v.org/plan_9/4th_edition/papers/rc); acme is linted and debugged by a special compiler so that there are no functions that return structures or integer and floating numbers in object code not converted to known formats and byte orders; [config.h](src/cmd/acme/config.h) should be perfectly tempered by the user or it will fuck up. mkfiles are straight and true, so you will have no trouble on account of acme returning cryptic compiler errors and not compiling.
 
 ready thyself for thine bodieth utmost horrrifiength challengeth and read more about [acme](http://acme.cat-v.org/)
 
 ## acme2k features
 
-![a1](https://raw.githubusercontent.com/karahobny/acme2k/master/img/a1.png)
+![a1](img/a1.png)
 >*who needs syntax highlighting when this fine piece of work purrs and shows that these fangs got all kinds of shades of visceral strewn around, yet in finite enough of quantities to forbid you from not appreciating its scarcity, elevating it from a mere editor to a sublime Rothko, while emacs sinks in it's kitschy aesthetics, no matter how hard the themes try to salvage that bloated-out-of-proportions Titanic...*
 
 + a centralized `config.h`-header heavily inspired by suckless school of software design philosophy; allowing customization of software specifically prior to its compilation
@@ -43,7 +43,7 @@ ready thyself for thine bodieth utmost horrrifiength challengeth and read more a
 ## installation
 after following the instructions in your `$PLAN9`-folder to run `./INSTALL` and `mk`'ing every goddamn *plan9*-userspace application there happens to be ported, you can move right on to mangle the tightly-knit web these applications form with this very github project you've atleast been eyein':
 
-![a2](https://raw.githubusercontent.com/karahobny/acme2k/master/img/a2.png)
+![a2](img/a2.png)
 >*that low contrast base16-ocean soothes your senses with a subtle balance of peace, quiet and solitude to your zen-like coding session, where it is just you, your workflow and fingertips dancing on the keyboard in a polyrhythmic, primitive thumping fashion. truly gaia has blessed you with this editor.*
 
 next, you should proceed to replace the `plan9port`'s defined `$PLAN9/src/cmd` with the `acme2k`'s `$GITPATH/src/cmd`.
@@ -82,18 +82,18 @@ you run `fontsrv -p .` to list all the available fonts from X11 to fontsrv; basi
 "/mnt/font/GohuFont/9/font",
 ```
 
-![a3](https://raw.githubusercontent.com/karahobny/acme2k/master/img/a3.png)
->*dont be shackled by dark hues and saturated pinks, make Glenda, the Bunny, proud by showing off the team colors aka the Rio Windowing Systems. "little black-on-white makes a little rob pike smile. when? every now and then!", or so ive been told.*
+![a3](img/a3.png)
+>*dont be shackled by dark hues and saturated pinks. make Glenda, the Bunny, proud by showing off the team colors aka the Rio Windowing Systems. "little black-on-white makes a little rob pike smile. when? every now and then!", or so ive been told.*
 
 in this case the first option would stand for Monaco size 9 antialised, the second for GohuFont size 9 aliased, ofc.
 
 insert two fonts into `config.h`'s font-array separating them with a comma. the first one is treated as a proportional width font and is used everywhere in `acme`, and by extension `acme2k`, by default. the second one can be activated for a specific window by executing `Font` from its tag window.
 
 #### colors
-colors need to be in the format of `0x*rgb hex color code*FF` without the prefixed hashtag. i'd suggest just to experiment what all the **#defines** mean but to start you with something `C_TAGBG` means tag window background color. `C_TXTBG` means text window backgorund color. `...HLBG/FG` means highlighted text background and foreground color etc. i've taken the liberty to comment all the color variations and what they affect on [config.h's noticeable comment section](https://github.com/karahobny/acme2k/blob/master/src/cmd/acme/config.h).
+colors need to be in the format of `0x*rgb hex color code*FF` without the prefixed hashtag. i'd suggest just to experiment what all the **#defines** mean but to start you with something `C_TAGBG` means tag window background color. `C_TXTBG` means text window backgorund color. `...HLBG/FG` means highlighted text background and foreground color etc. i've taken the liberty to comment all the color variations and what they affect on [config.h's noticeable comment section](src/cmd/acme/config.h).
 
 ## but WHAT can I do
-definetly check out [TODO](https://github.com/karahobny/acme2k/blob/master/docs/TODO.md) and feel free to chime in what would you like to see as a feature, add an issue or clone the repo and edit [TODO.md](https://github.com/karahobny/acme2k/blob/master/docs/TODO.md) and push it to the upstream, if all you want to do is add feature ideas. for bug fixes and coding features its better to contact me at:
+definetly check out [TODO](docs/TODO.md) and feel free to chime in what would you like to see as a feature, add an issue or clone the repo and edit [TODO.md](docs/TODO.md) and push it to the upstream, if all you want to do is add feature ideas. for bug fixes and coding features its better to contact me at:
 ````
 karahobny at gmail dot com
 ````
@@ -102,6 +102,6 @@ or branch and send a pull request so i can check it out, dont worry ill always t
 ## license (or whats the other one ive never heard of)
 yeah no one's really heard of that other one, it was just a fucked up situation where *plan9* guys' hands were forced by lawyers to use that for some reason. *plan 9* also got gpl'd for some time but that version is meaningless and a joke afaik; up still here in github if it somehow jollies your gollies.
 
-project is licensed as following (if ive understood correctly and this is allowed), the original unmodified `plan9port` being under [**lucent public license**](https://github.com/karahobny/acme2k/blob/master/docs/LICENSE.LUCENT) which specifically disallows any warranty, like every goddamn license in the whole goddamn universe and allows for me to sublicense it as i see fit so ive seen fit to specifically license my modest modifications under [**mit license**](https://github.com/karahobny/acme2k/blob/master/docs/LICENSE.MIT), simply because it's more straightforward a permissive license and nobody really has to second guess what its trying to allow/disallow a developer and/or consumer to do.
+project is licensed as following (if ive understood correctly and this is allowed), the original unmodified `plan9port` being under [**lucent public license**](docs/LICENSE.LUCENT) which specifically disallows any warranty, like every goddamn license in the whole goddamn universe and allows for me to sublicense it as i see fit so ive seen fit to specifically license my modest modifications under [**mit license**](docs/LICENSE.MIT), simply because it's more straightforward a permissive license and nobody really has to second guess what its trying to allow/disallow a developer and/or consumer to do.
 
 ive yet to have had to think about accepting contributions from other licenses than **lucent** or **mit** since this is still in its faltering baby steps, but id still hope if you would think about trying to avoid having a deck of licenses to show instead of actual features in our repository.
