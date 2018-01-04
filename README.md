@@ -81,13 +81,12 @@ you run `fontsrv -p .` to list all the available fonts from X11 to fontsrv; basi
 "/mnt/font/Monaco/9a/font",
 "/mnt/font/GohuFont/9/font",
 ```
+in this case the first option would stand for Monaco size 9 antialised, the second for GohuFont size 9 aliased, ofc; or you can use the full path to your plan9 converted .font-file, found in this git repositorys `font/` directory.
+
+insert two fonts into `config.h`'s font-array separating them with a comma. the first one is treated as a proportional width font and is used everywhere in `acme`, and by extension `acme2k`, by default. the second one can be activated for a specific window by executing `Font` from its tag window.
 
 ![a3](img/a3.png)
 >*dont be shackled by dark hues and saturated pinks. make Glenda, the Bunny, proud by showing off the team colors aka the Rio Windowing Systems. "little black-on-white makes a little rob pike smile. when? every now and then!", or so ive been told.*
-
-in this case the first option would stand for Monaco size 9 antialised, the second for GohuFont size 9 aliased, ofc.
-
-insert two fonts into `config.h`'s font-array separating them with a comma. the first one is treated as a proportional width font and is used everywhere in `acme`, and by extension `acme2k`, by default. the second one can be activated for a specific window by executing `Font` from its tag window.
 
 #### colors
 colors need to be in the format of `0x*rgb hex color code*FF` without the prefixed hashtag. i'd suggest just to experiment what all the **#defines** mean but to start you with something `C_TAGBG` means tag window background color. `C_TXTBG` means text window backgorund color. `...HLBG/FG` means highlighted text background and foreground color etc. i've taken the liberty to comment all the color variations and what they affect on [config.h's noticeable comment section](src/cmd/acme/config.h).
