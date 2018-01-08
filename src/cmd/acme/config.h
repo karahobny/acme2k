@@ -13,8 +13,8 @@
  */
 
 char *fontnames[2] = {
-	"/usr/local/plan9/font/profont/profont-12.font",
-	"/mnt/font/ProFont/9/font"
+	"/lib/font/bit/profont/profont-12.font",
+	"/lib/font/bit/mntcarlo/mntcarlo.font"
 };
 
 /*
