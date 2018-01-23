@@ -18,64 +18,47 @@ char *fontnames[2] = {
 };
 
 /*
- *  globalautoindent tries to guess where to
- *  indent by the context of the previous line.
+ * globalautoindent tries to guess where to
+ * indent by the context of the previous line.
  *
- *  comes highly suggested.
+ * comes highly suggested.
  */
 
-int globalautoindent	= TRUE;
+int globalautoindent = TRUE;
 
 /*
- *  swapping scroll buttons makes B1 scroll down
- *  instead of up and B2 up instead of down
+ * swapping scroll buttons makes B1 scroll down
+ * instead of up and B2 up instead of down
  */
 
-int	swapscrollbuttons	= FALSE;
+int	swapscrollbuttons = FALSE;
 
 /*
- *  bartflag triggers quote unquote experimental
- *  mode, in which instead of mouse following focus
- *  from window to window etc. it in fact, does not.
+ * bartflag triggers quote unquote experimental
+ * mode, in which instead of mouse following focus
+ * from window to window etc. it in fact, does not.
  *
- *  comes highly suggested.
+ * comes highly suggested.
  */
 
-int bartflag			= TRUE;
+int bartflag = TRUE;
 
-/*
- *  colors-constants. now let me take a minute to explain
- *  them. C_TAGBG/FG/HLBG/HLFG are respectively your tag
- *  windows background, foreground, highlighted back- and
- *  foreground color. The same exact applies to C_TXT*-
- *  variants of the same constant just in this case it handles
- *  the colorscheme of the text window.
- *
- *  C_WINBUTTON is the button which you adjust your columns
- *  position with. C_COLBUTTON represents a separate text
- *  windows button. C_TMPBUTTON is the so-called "dirty"
- *  or "unclean" -marker aka notifying the file as modified put
- *  in the middle of C_COLBUTTON. C_SCROLLBG is plain and simple
- *  your scrollbars background color.
- *
- *  the last two defines are for defining the color of the specific
- *  buttons highlight background.
- */
+/* colorscheme */
 
-#define C_TAGBG			0xFFFFFFFF
-#define C_TAGFG			0x000000FF
-#define C_TAGHLBG		0x999999FF
-#define C_TAGHLFG		0x000000FF
+static const unsigned int c_tag_bg        = 0xFFFFFFFF;
+static const unsigned int c_tag_fg        = 0x000000FF;
+static const unsigned int c_tag_hl_bg     = 0x999999FF;
+static const unsigned int c_tag_hl_fg     = 0x000000FF;
 
-#define C_TXTBG			0xFFFFFFFF
-#define C_TXTFG			0x000000FF
-#define C_TXTHLBG		0x999999FF
-#define C_TXTHLFG		0x000000FF
+static const unsigned int c_txt_bg        = 0xFFFFFFFF;
+static const unsigned int c_txt_fg        = 0x000000FF;
+static const unsigned int c_txt_hl_bg     = 0x999999FF;
+static const unsigned int c_txt_hl_fg     = 0x000000FF;
 
-#define C_WINBUTTON		0x4d4d4dFF
-#define C_COLBUTTON		0x55aaaaFF
-#define C_TMPBUTTON		0x55aaaaFF
-#define C_SCROLLBG		0x999999FF
+static const unsigned int c_window_button = 0x55aaaaFF;
+static const unsigned int c_column_button = 0x4d4d4dFF;
+static const unsigned int c_tmp_button    = 0x55aaaaFF;
+static const unsigned int c_scrollbar_bg  = 0x999999FF;
 
-#define C_BUTTON2HL		0x55aaaaFF
-#define C_BUTTON3HL		0x55aaaaFF
+static const unsigned int c_button2_hl    = 0x55aaaaFF;
+static const unsigned int c_button3_hl    = 0x55aaaaFF;

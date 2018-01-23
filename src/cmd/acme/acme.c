@@ -978,19 +978,24 @@ iconinit(void)
 	Rectangle r;
 	Image *tmp;
 
+	unsigned int tag_colors[4] = { c_tag_bg, c_tag_fg, c_tag_hl_bg, c_tag_hl_fg };
+	unsigned int txt_colors[4] = { c_txt_bg, c_txt_fg, c_txt_hl_bg, c_txt_hl_fg };
+	unsigned int ui_colors[4] = { c_column_button, c_scrollbar_bg, c_tmp_button, c_window_button };
+	unsigned int mhl_colors[2] = { c_button2_hl, c_button3_hl };
+
 	if(tagcols[BACK] == nil) {
 
-		tagcols[BACK]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGBG);
-		tagcols[HIGH]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGHLBG);
-		tagcols[BORD]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_COLBUTTON);
-		tagcols[TEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGFG);
-		tagcols[HTEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGHLFG);
+		tagcols[BACK]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, tag_colors[0]);
+		tagcols[TEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, tag_colors[1]);
+		tagcols[HIGH]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, tag_colors[2]);
+		tagcols[HTEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, tag_colors[3]);
+		tagcols[BORD]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, ui_colors[0]);
 
-		textcols[BACK] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTBG);
-		textcols[HIGH] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTHLBG);
-		textcols[BORD] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_SCROLLBG);
-		textcols[TEXT] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTFG);
-		textcols[HTEXT] = allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTHLFG);
+		textcols[BACK] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, txt_colors[0]);
+		textcols[TEXT] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, txt_colors[1]);
+		textcols[HIGH] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, txt_colors[2]);
+		textcols[HTEXT] = allocimage(display, Rect(0,0,1,1), RGBA32, 1, txt_colors[3]);
+		textcols[BORD] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, ui_colors[1]);
 
 	}
 
@@ -1015,15 +1020,15 @@ iconinit(void)
 	r.max.x -= ButtonBorder;
 	border(modbutton, r, ButtonBorder, tagcols[BORD], ZP);
 	r = insetrect(r, ButtonBorder);
-	tmp = allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TMPBUTTON);
+	tmp = allocimage(display, Rect(0,0,1,1), RGBA32, 1, ui_colors[2]);
 	draw(modbutton, r, tmp, nil, ZP);
 	freeimage(tmp);
 
 	r = button->r;
-	colbutton = allocimage(display, r, RGBA32, 1, C_WINBUTTON);
+	colbutton = allocimage(display, r, RGBA32, 1, ui_colors[3]);
 
-	but2col = allocimage(display, r, screen->chan, 1, C_BUTTON2HL);
-	but3col = allocimage(display, r, screen->chan, 1, C_BUTTON3HL);
+	but2col = allocimage(display, r, screen->chan, 1, mhl_colors[0]);
+	but3col = allocimage(display, r, screen->chan, 1, mhl_colors[1]);
 }
 
 /*
