@@ -1,0 +1,39 @@
+acme2k is configured through modifying the config.h -header
+file, not unlike some other group's modus operandi. This might
+take some time getting used to but you'll soon be appreciating
+the zen of not adding any unneccesary baggage to all these ported
+plan9-libraries acme is - oh - so dependent on.
+
+Here's a quick recap what all the variables do and do not do:
+
+---- BOOLEANS: 0 or FALSE for false and 1 or TRUE for true
+
+globalautoindent tries to guess where to add autoindentation by the
+context of the previous line. Standard stuff. Comes highly suggested.
+
+swapscrollbuttons swaps the mouse buttons you use to scroll, causing
+B1 scroll down now, instead of up and vice versa for B2.
+
+bartflag triggers quote unquote experimental mode, in which the window
+focus doesn't follow just with the hover of a mouse, but the buffer
+clicked on or last typed on. A hidden gem. Comes highly suggested.
+
+---- ARRAYS: two strings inside curly brackets,
+----               separated by a single comma.
+
+fontnames[2] takes two fonts as input: first one, [0], it treats as a
+proportional-width font and uses as the main UI typeface, while the
+second [1] acts the role of a fixed-width. This font comes into play on
+per-window basis when `Font` has been executed on the very buffer it
+applies itself to, or on the tag window. These are however nothing more
+than stylistic guidelines and the fontnames-array can be treated as what
+it is. Two fonts just hanging around.
+
+Note: `Font` can also be executed with any valid font from `fontsrv -p .`
+or `/lib/font/bit` ($PLAN9/font) as an argument, thus allowing you to
+experiment with typeface sizes as long as you please.
+
+---- SHITLOAD OF DIFFERENT UNSIGNED INT VARIABLES 
+----                               IN RGBA FORMAT
+
+
