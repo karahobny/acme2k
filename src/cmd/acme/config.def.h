@@ -1,7 +1,7 @@
 /* docs/configuration comes highly suggested */
 
 int globalautoindent         = 1;
-int	swapscrollbuttons        = 0;
+int swapscrollbuttons        = 0;
 int bartflag                 = 1;
 
 char *fontnames[2] = {
