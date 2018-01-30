@@ -1,4 +1,4 @@
-/* docs/configuration comes highly suggested */
+/* docs/CONFIGURATION comes highly suggested */
 
 int globalautoindent         = 1;
 int swapscrollbuttons        = 0;
