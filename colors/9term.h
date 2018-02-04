@@ -1,13 +1,6 @@
-/* docs/CONFIGURATION comes highly suggested */
-
-int globalautoindent		= 1;
-int swapscrollbuttons		= 0;
-int bartflag				= 1;
-
-char *fontnames[2] = {
-	"/lib/font/bit/mntcarlo/mntcarlo.font",
-	"/lib/font/bit/profont/profont-12.font"
-};
+/*
+ * colorscheme themed from 9term / rio
+ */
 
 static uint c_tag_bg		= 0xFFFFFFff;
 static uint c_tag_fg		= 0x000000ff;
