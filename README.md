@@ -81,7 +81,7 @@ you run `fontsrv -p .` to list all the available fonts from X11 to fontsrv; basi
 "/mnt/font/Monaco/9a/font",
 "/mnt/font/GohuFont/9/font",
 ```
-in this case the first option would stand for Monaco size 9 antialised, the second for GohuFont size 9 aliased, ofc; or you can use the full path to your plan9 converted .font-file, found in this git repositorys `font/` directory.
+in this case the first option would stand for Monaco size 9 antialiased, the second for GohuFont size 9 aliased, ofc; or you can use the full path to your plan9 converted .font-file, found in this git repositorys `font/` directory.
 
 insert two fonts into `config.h`'s font-array separating them with a comma. the first one is treated as a proportional width font and is used everywhere in `acme`, and by extension `acme2k`, by default. the second one can be activated for a specific window by executing `Font` from its tag window.
 
