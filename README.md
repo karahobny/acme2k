@@ -98,7 +98,7 @@ karahobny at gmail dot com
 ````
 or branch and send a pull request so i can check it out, dont worry ill always tip and youll get your name on the contributors list and you can for all i care, add your name on a comment preceding the codeblock in question, you know p. much what ever that doesnt harm the readability of the code, im all about you people having the respect you deserve for having partaken in such a sweet project.
 
-Also, do check out **#acme2k** @ **freenode** to contribute and to take part in this community or us to buld together.
+Also, do check out **#acme2k** @ **freenode** to contribute and to take part in this community for us to build something together or to raise issues personally.
 
 ## license (or whats the other one ive never heard of)
 yeah no one's really heard of that other one, it was just a fucked up situation where *plan9* guys' hands were forced by lawyers to use that for some reason. *plan 9* also got gpl'd for some time but that version is meaningless and a joke afaik; up still here in github if it somehow jollies your gollies.
