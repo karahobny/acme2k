@@ -8,8 +8,7 @@ Before compiling mv/copy config.def.h as config.h and here's a quick
 recap what all the variables do and do not do:
 
 
----- BOOLEANS:     [ 0 || FALSE ] => false 
-----           ||  [ 1 ||  TRUE ] => true
+## GENERAL DEFAULT BEHAVIOR
 
 `globalautoindent` tries to guess where to add indentation by the
 context of the previous line. Standard stuff. Comes highly suggested.
@@ -17,28 +16,67 @@ context of the previous line. Standard stuff. Comes highly suggested.
 `swapscrollbuttons` swaps the mouse buttons you use to scroll,
 causing B1 scroll down now, instead of up and vice versa for B2.
 
-`bartflag` triggers quote unquote experimental mode, in which the 
+`bartflag` triggers quote unquote experimental mode, in which the
 window focus doesn't follow just with the hover of a mouse, but the
 buffer clicked on or last typed on. A hidden gem. Comes highly suggested.
 
 
----- ARRAYS: two strings inside curly brackets,
-----               separated by a single comma.
+## FONTS
 
 fontnames[2] takes two fonts as input: first one, [0], it treats as a
 proportional-width font and uses as the main UI typeface, while the
 second [1] acts the role of a fixed-width. This font comes into play on
-per-window basis when `Font` has been executed on the tag window or on 
+per-window basis when `Font` has been executed on the tag window or on
 the very buffer it applies itself to. These are however nothing more
 than stylistic guidelines and the fontnames-array can be treated as what
 it is. A font and a font to toggle to.
 
 Note: `Font` can also be executed with any valid font from `fontsrv -p .`
-or `/lib/font/bit` ($PLAN9/font) as an argument, thus allowing you to
-experiment with typeface sizes as long as you please.
+or `/lib/font/bit` (substitute folder name for `$PLAN9/font`) as an argument,
+thus allowing you to experiment with typeface sizes as long as you please.
 
 
----- SHITLOAD OF DIFFERENT UNSIGNED INT VARIABLES 
-----                               IN RGBA FORMAT
+## COLOR SCHEME
+
+Now these variables are what you are probably most eager to fiddle with. They
+handle the color of each specified element in RGBA-format (even though the alpha-
+channel is not used except to specify when something is fully transparent or fully
+opaque element). The colors are thus given in the format of 0xRRGGBBAA. I haven't
+seen any results from fiddling with the Alpha-layer so I'd suggest to keep it at
+maximum FF. All that is left is your usual run-of-the-mill hexadecimally inputted
+RRGGBB, which you've probably seen all over the place in the form of, for
+example, #FFFFFF for white. I might fiddle with a crude translator that would let
+you write the color codes with the usual #RRGGBB-format, but since this is
+easy to translate in your head to the needed form of 0xRRGGBBff, it is far from
+a top priority at the moment.
+
+So first we have the c_tag_*-group which includes colors affecting the so-called
+"tag line", which holds a group of information and actions associated with the
+text window hanging from it. c_tag_bg simply changes the background color of the
+tag line, while the foreground is left for c_tag_fg.
+
+c_tag_hl_bg and c_tag_hl_fg control the look of the highlighted text specifically
+in the tag line, again bg for background and fg for foreground.
+
+c_txt_*-group handles the colors for the text window. It follows the same syntax as
+the variables handling the "tag line". bg for background, fg for foreground, hl_bg
+for highlighted background and hl_fg for highlighted foreground.
+
+c_window_button is the draggable button controlling the position of the split
+horizontal pane. It is visible even without windows sharing the horizontal space.
+
+c_column_button is another draggable button, with only the outlines of the rectangle
+colored if the file is still in its unmodified state. Dragging it around moves the
+window's alignment vertically. The square hole at the center of this indicates whether
+the file is "dirty", aka modified after loading the file or saving it, or not.
+To show the file has been modified in anyway, c_tmp_button picks the color to fill it
+with, marking it dirty.
+
+c_scrollbar_bg is the background color for the scrollbar, while the scrollbar itself
+inherits the color of the c_txt_bg, the text window's background color.
+
+c_button2_hl and c_button3_hl assign a different background color for highlights if the 
+area is being highlighted by dragging the middle-button (mouse wheel), button2 in this 
+case, or with a right click.
 
 
