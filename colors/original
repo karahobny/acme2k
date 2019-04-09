@@ -1,0 +1,19 @@
+#define ENABLE_PASTELS
+#define C_MIX                   DWhite
+#define C_TAGBG                 DPalebluegreen
+#define C_TAGFG                 0x000000FF
+#define C_TAGHLBG               DPalegreygreen
+#define C_TAGHLFG               0x000000FF
+
+#define C_TXTBG                 DPaleyellow
+#define C_TXTFG                 0x000000FF
+#define C_TXTHLBG               DDarkyellow
+#define C_TXTHLFG               0x000000FF
+
+#define C_WINBUTTON             DPurpleblue
+#define C_COLBUTTON             DPurpleblue
+#define C_TMPBUTTON             DMedblue
+#define C_SCROLLBG              DYellowgreen
+
+#define C_BUTTON2HL             0xAA0000FF
+#define C_BUTTON3HL             0x006600FF

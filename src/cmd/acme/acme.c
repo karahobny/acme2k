@@ -979,14 +979,21 @@ iconinit(void)
 	Image *tmp;
 
 	if(tagcols[BACK] == nil) {
-
+#ifndef ENABLE_PASTELS
 		tagcols[BACK]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGBG);
+#else
+		tagcols[BACK] = allocimagemix(display, C_TAGBG, C_MIX);
+#endif
+
 		tagcols[HIGH]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGHLBG);
 		tagcols[BORD]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_COLBUTTON);
 		tagcols[TEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGFG);
 		tagcols[HTEXT]	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TAGHLFG);
-
+#ifndef ENABLE_PASTELS
 		textcols[BACK] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTBG);
+#else
+		textcols[BACK] = allocimagemix(display, C_TXTBG, C_MIX);
+#endif
 		textcols[HIGH] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTHLBG);
 		textcols[BORD] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_SCROLLBG);
 		textcols[TEXT] 	= allocimage(display, Rect(0,0,1,1), RGBA32, 1, C_TXTFG);
